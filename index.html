@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almatar Documentation</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="scripts.js" defer></script>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="/Users/ali.elshazly/Downloads/motivational.mp4" type="video/mp4">
+      </video>
+  <header>
+    <p class="quickGuide">The Quick Documentation Guide</p>
+  </header>
+  <div>
+    <h1>Almatar App Contact Center Documentation</h1>
+  </div>
+  
+
+<div class="button-container">
+    <button id="gdsBooking">GDS Booking</button>
+    <button id="lccBooking">LCC Booking</button>
+</div>
+
+  <div id="gdsOptions" style="display: none;">
+    <section id="actionableButtons">
+      <button id="outboundButtonChangeable">Outbound Change Request [Changeable Booking]</button>
+      <button id="returnButtonChangeable">Return Flight Change Request [Changeable Booking]</button>
+      <button id="flightChangeable">Flight Change Request [Changeable Booking]</button>
+      <button id="addingBaggage">Adding Baggage</button>
+      <button id="flightCancellationRefundable">Flight Cancellation [Refundable Booking]</button>
+    </section>
+    
+    <section id="nonActionableButtons">
+      <button id="changeButtonNonChangeable">Flight Change [Non Changeable]</button>
+      <button id="cancelButtonNonRefundable">Flight Cancellation [Non Refundable]</button>
+    </section>
+  </div>
+
+  <div id="lccOptions" style="display: none;">
+    <section id="lccActionableButtons">
+      <button id="lccOutboundButton">LCC Outbound Change [Changeable Booking]</button>
+      <button id="lccReturnButton">LCC Return Change [Changeable Booking]</button>
+      <button id="lccFlightChangeButton">LCC Flight Change [Changeable Booking]</button>
+      <button id="lccAddingBaggage">LCC Adding Baggage</button>
+      <button id="lccFlightCancellation">LCC Cancel Flight [Refundable Booking]</button>
+    </section>
+      <section id="lccNonActionableButtons">
+      <button id="lccFlightCancellationNonRefundable">LCC Cancel Flight [Non-Refundable]</button>
+      <button id="lccFlightChangeNonChangeable">LCC Change Flight [Non-Changeable]</button>
+    </section>
+  </div>
+ 
+  
+  <div class="inputs" id="additionalFields" style="display:none;">
+    
+    <div id="outboundFields" style="display:none;">
+      <label for="newRequestedOutboundDate">New Requested Departure Date: </label>
+      <input type="date" id="newRequestedOutboundDate" onfocus="this.showPicker()"><br>
+      <label for="airlineChangePenalty">Airline Change Penalty: </label>
+      <input type="number" id="airlineChangePenalty" step="0.01"><br>
+      <label for="fareDifference">Fare Difference: </label>
+      <input type="number" id="fareDifference" step="0.01"><br>
+      <label for="taxDifference">Tax Difference: </label>
+      <input type="number" id="taxDifference" step="0.01"><br>
+      <label for="totalChangeFees">Total Change Fees: </label>
+      <input type="number" id="totalChangeFees" step="0.01" readonly><br>
+    </div>
+
+    <div id="returnFields" style="display:none;">
+      <label for="newRequestedReturnDate">New Requested Return Date: </label>
+      <input type="date" id="newRequestedReturnDate" onfocus="this.showPicker()"><br>
+      <label for="airlineChangePenaltyReturn">Airline Change Penalty: </label>
+      <input type="number" id="airlineChangePenaltyReturn" step="0.01"><br>
+      <label for="fareDifferenceReturn">Fare Difference: </label>
+      <input type="number" id="fareDifferenceReturn" step="0.01"><br>
+      <label for="taxDifferenceReturn">Tax Difference: </label>
+      <input type="number" id="taxDifferenceReturn" step="0.01"><br>
+      <label for="totalChangeFeesReturn">Total Change Fees: </label>
+      <input type="number" id="totalChangeFeesReturn" step="0.01" readonly><br>
+    </div>
+
+    <div id="flightChangeFields" style="display:none;">
+      <label for="newRequestedDepartureDate">New Requested Departure Date: </label>
+      <input type="date" id="newRequestedDepartureDate" onfocus="this.showPicker()"><br>
+      <label for="newRequestedReturnDateChange">New Requested Return Date: </label>
+      <input type="date" id="newRequestedReturnDateChange" onfocus="this.showPicker()"><br>
+      <label for="airlineChangePenaltyFlight">Airline Change Penalty: </label>
+      <input type="number" id="airlineChangePenaltyFlight" step="0.01"><br>
+      <label for="fareDifferenceFlight">Fare Difference: </label>
+      <input type="number" id="fareDifferenceFlight" step="0.01"><br>
+      <label for="taxDifferenceFlight">Tax Difference: </label>
+      <input type="number" id="taxDifferenceFlight" step="0.01"><br>
+      <label for="totalChangeFeesFlight">Total Change Fees: </label>
+      <input type="number" id="totalChangeFeesFlight" step="0.01" readonly><br>
+    </div>
+
+    <div id="baggageFields" style="display:none;">
+      <label for="requestedKgs">Requested KGs: </label>
+      <input type="number" id="requestedKgs" step="0.01"><br>
+      <label for="numberOfPcs">Number of PCs: </label>
+      <input type="number" id="numberOfPcs" step="0"><br>
+      <label for="numberOfPassengers">Number of Passengers: </label>
+      <input type="number" id="numberOfPassengers" step="0"><br>
+      <label for="costPerPassenger">Cost Per Passenger: </label>
+      <input type="number" id="costPerPassenger" step="0.01"><br>
+      <label for="totalBaggageCost">Total Baggage Cost: </label>
+      <input type="number" id="totalBaggageCost" step="0.01" readonly><br>
+    </div>
+
+    <div id="cancellationFields" style="display:none;">
+      <label for="airlineCancellationPenalty">Airline Cancellation Penalty: </label>
+      <input type="number" id="airlineCancellationPenalty" step="0.01"><br>
+      <label for="nonRefundableTaxes">Non-Refundable Taxes: </label>
+      <input type="number" id="nonRefundableTaxes" step="0"><br>
+      <label for="lossAmount">Loss Amount: </label>
+      <input type="number" id="lossAmount" step="0" placeholder="In case the booking was manually confirmed with loss"><br>
+      <label for="serviceFees">Service Fees: </label>
+      <input type="number" id="serviceFees" step="0.01" placeholder="Backoffice Service Fees"><br>
+      <label for="totalCancellationPenalty">Total Cancellation Penalty: </label>
+      <input type="number" id="totalCancellationPenalty" step="0.01" readonly><br>
+    </div>
+
+<div class="inputs" id="lccAdditionalFields" style="display:none;">
+    
+    <div id="lccOutboundChangeFields" style="display: none;">
+    <!-- Add your input fields here similar to GDS Outbound Change Fields -->
+    <label for="lccNewRequestedOutboundDate">New Requested Departure Date:</label>
+    <input type="date" id="lccNewRequestedOutboundDate" onfocus="this.showPicker()"><br>
+    <label for="lccAirlineChangeFees">Airline Change Fees:</label>
+    <input type="number" id="lccAirlineChangeFees" name="lccAirlineChangeFees">
+    <!-- Add other fields similarly -->
+    </div>
+
+
+    <div id="lccReturnChangeFields" style="display:none;">
+      <label for="newRequestedLCCReturnDate">LCC New Return Change Date:</label>
+      <input type="date" id="newRequestedLCCReturnDate" onfocus="this.showPicker()"><br>
+      <label for="totalAirlineChangeFeesLCCReturn">Total Airline Change Fees:</label>
+      <input type="number" id="totalAirlineChangeFeesLCCReturn" step="0.01"><br>
+    </div>
+
+    <div id="lccFlightChangeFields" style="display:none;">
+      <label for="newRequestedLCCDepartureDate">LCC New Departure Date:</label>
+      <input type="date" id="newRequestedLCCDepartureDate" onfocus="this.showPicker()"><br>
+      <label for="newRequestedLCCFlightReturnDate">LCC New Return Date:</label>
+      <input type="date" id="newRequestedLCCFlightReturnDate" onfocus="this.showPicker()"><br>
+      <label for="totalAirlineChangeFeesLCCFlight">Total Airline Change Fees:</label>
+      <input type="number" id="totalAirlineChangeFeesLCCFlight" step="0.01"><br>
+    </div>
+
+    <div id="lccBaggageFields" style="display:none;">
+      <label for="lccRequestedKgs">LCC Requested KGs:</label>
+      <input type="number" id="lccRequestedKgs"><br>
+      <label for="lccNumberOfPcs">LCC Number of Pieces:</label>
+      <input type="number" id="lccNumberOfPcs"><br>
+      <label for="lccNumberOfPassengers">LCC Number of Passengers:</label>
+      <input type="number" id="lccNumberOfPassengers"><br>
+      <label for="lccCostPerPassenger">LCC Cost Per Passenger:</label>
+      <input type="number" id="lccCostPerPassenger"><br>
+      <label for="lccTotalBaggageCost">Total LCC Baggage Cost:</label>
+      <input type="number" id="lccTotalBaggageCost" readonly><br>
+    </div>
+
+    <div id="lccCancellationFields" style="display:none;">
+      <label for="lccAirlineRefundAmount">Airline Refund Amount:</label>
+      <input type="number" id="lccAirlineRefundAmount"><br>
+      <label for="lccDiscount">Discount if applicable:</label>
+      <input type="number" id="lccDiscountAmount"><br>
+      <label for="totalLCCRefundAmount">Total LCC Refund Amount:</label>
+      <input type="number" id="totalLCCRefundAmount" readonly><br>
+    </div>
+
+    </div>
+
+    <button id="updateTextArea">Update Text Area</button>
+  </div>
+    <div class="body-content">
+        <button id="customerAgreed">Customer Agreed</button>
+        <button id="customerRejected">Customer Rejected</button>
+        <br>
+        <textarea id="textArea" rows="10" cols="25"></textarea>
+        <button id="copyToClipboard" onclick="copyToClipboard()">Copy the text</button>
+        <button id="clearTextarea" onclick="clearTextarea()">Clear</button>
+    </div>
+  <footer>
+    <p>Made with<span class="heart">❤️</span>by Ali Elshazly  &copy; Copyright 2024</p>
+  </footer>
+
+</body>
+</html>

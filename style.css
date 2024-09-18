@@ -1,0 +1,307 @@
+/* General Styles */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    min-height: 100vh; /* Ensure it takes full height of the viewport */
+    height: 100%;
+    width: 100%;
+    margin-bottom: 2em;
+    overflow: auto;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1f4e79;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* To position the logo absolutely within the header */
+}
+
+
+header::before { /* Use ::before pseudo-element to add the logo */
+    content: "";
+    background-image: url("/Users/ali.elshazly/Downloads/Logo.png"); /* Replace with your logo's path */
+    background-size: contain; /* Or cover, depending on how you want it to fit */
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px; /* Adjust top positioning as needed */
+    left: 10px; /* Adjust left positioning as needed */
+    width: 120px; /* Adjust logo width as needed */
+    height: 180px; /* Adjust logo height as needed */
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #1f4e79;
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-container button {
+    background-color: #1f4e79;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: small;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.button-container button:hover {
+    background-color: #19bf50;
+    transform: scale(1.05);
+}
+
+
+#lccBooking {
+    background-color: #1f4e79;
+}
+
+#lccBooking:hover {
+    background-color: #19bf50;
+    transform: scale(1.05);
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* In your style.css file */
+.button-container button.clicked,
+#lccBooking.clicked {
+    background-color: #19bf50; /* Hover color */
+    transform: scale(1.05);
+}
+
+section {
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+section button {
+    width: 100%;
+    background-color: #29649b;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-size: small;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+section button:hover {
+    background-color: #19bf50;
+    transform: scale(1.03);
+}
+
+/* Add this CSS rule to your style.css file */
+section button.clicked {
+    background-color: #19bf50; /* Hover color */
+}
+
+#actionableButtons, #nonActionableButtons, #lccActionableButtons, #lccNonActionableButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section button {
+    width: 48%;
+}
+
+.inputs {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: small;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+input[type="date"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: small;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="date"]:focus, input[type="number"]:focus {
+    border-color: #1f8ab9;
+    outline: none;
+}
+
+button#updateTextArea {
+    background-color: #ffa502;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: small;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button#updateTextArea:hover {
+    background-color: #e69900;
+}
+
+button#customerAgreed, button#customerRejected {
+    width: 15%;
+    padding: 15px 30px;
+    font-size: small;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    display: inline-block;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Center the buttons within their container */
+button#customerAgreed, button#customerRejected {
+    display: inline-block; /* Ensure they are inline-block elements */
+}
+
+.button-container { /* Assuming the buttons are within a div with this class */
+    text-align: center; /* Center the content horizontally */
+}
+
+/* New color palette close to #1f4e79 */
+button#customerAgreed {
+    background-color: #1f4e79; /* Primary blue */
+    color: white;
+}
+
+button#customerAgreed:hover {
+    background-color: #19bf50; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+button#customerRejected {
+    background-color: #d32f2f; /* Red */
+    color: white;
+}
+
+button#customerRejected:hover {
+    background-color: #19bf50; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+button#copyToClipboard, button#clearTextarea {
+    background-color: #1f4e79;
+    color: white;
+    padding: 10px;
+    width: 10%;
+    border: none;
+    border-radius: 30px;
+    font-size: small;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button#copyToClipboard:hover, button#clearTextarea:hover {
+    background-color: #357151;
+    transform: scale(1.05);
+}
+
+button#clearTextarea {
+    background-color: #ee5252;
+}
+
+footer {
+    text-align: center;
+    padding: 0px;
+    background-color: #1f4e79;
+    color: white;
+    margin-top: 10%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+    font-size: small;
+    
+}
+
+footer .heart {
+    color: #e25555;
+    font-size: small;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+}
+
+#myVideo {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the video is behind other elements */
+  }
+
+  .body-content {
+    flex: 1; /* This makes sure it takes up the remaining space */
+    padding: 20px;
+    overflow: auto; /* Ensures content is scrollable if it overflows */
+}
